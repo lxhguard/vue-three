@@ -2,6 +2,8 @@
   <div id="app">
     <router-link to="/helloworld">helloworld</router-link><br/>
     <router-link to="/dna">DNA</router-link><br/>
+    <router-link to="/tween">tween</router-link><br/>
+    <router-link to="/lizi">粒子</router-link><br/>
     <router-view></router-view>
   </div>
 </template>
@@ -25,5 +27,9 @@ export default {
   padding: 0;
   margin: 0;
   /* margin-top: 60px; */
+}
+*{
+  margin:0;
+  padding:0;
 }
 </style>

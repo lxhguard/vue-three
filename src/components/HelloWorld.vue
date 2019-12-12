@@ -156,30 +156,25 @@
         window.console.error(xhr);
 			};
       
- 
+      
 			var tga_loader = new THREE.TextureLoader(manager);
 			tga_loader.setPath('static/models/mooncake/');
 			var material = new THREE.MeshPhongMaterial({  //MeshStandardMaterial
-      map: tga_loader.load('mooncake.png'),
-// 			    normalMap: tga_loader.load('xian.jpg'),
-// 			    specularMap: tga_loader.load('xian.jpg'),//高光贴图（Specular Map）
-// 			    bumpMap: tga_loader.load('xian.jpg')//凹凸贴图（Bump Map）
+        map: tga_loader.load('mooncake.png'),
 			}); 
-// 			console.log(material)
-// 			material.map.repeat.set( 10, 10)
 			var obj_loader = new OBJLoader(manager);
 			obj_loader.setPath('static/models/mooncake/');
 			obj_loader.load('mooncake.obj', function(object){
-        var geometry = object.children[0].geometry;
-        geometry.attributes.uv2 = geometry.attributes.uv;
-        geometry.center();
-        material.side = THREE.DoubleSide;
-        var mesh = new THREE.Mesh(geometry, material);
-        window.console.log(mesh)
-        mesh.scale.multiplyScalar(0.2);
-        that.mesh = mesh;
-        that.scene.add(mesh);
-        }, onProgress, onError); 
+          var geometry = object.children[0].geometry;
+          geometry.attributes.uv2 = geometry.attributes.uv;
+          geometry.center();
+          material.side = THREE.DoubleSide;
+          var mesh = new THREE.Mesh(geometry, material);
+          window.console.log(mesh)
+          mesh.scale.multiplyScalar(0.2);
+          that.mesh = mesh;
+          that.scene.add(mesh);
+          }, onProgress, onError); 
         }
     },
     mounted() {
